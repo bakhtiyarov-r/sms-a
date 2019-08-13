@@ -1,6 +1,6 @@
-import $ from "jquery";
-import PopperJs from 'popper.js';
-import 'bootstrap';
+// import $ from "jquery";
+// import PopperJs from 'popper.js';
+// import 'bootstrap';
 
 function App() {
     
