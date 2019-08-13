@@ -1,5 +1,5 @@
 Для запуска 
 загрузить репозиторий
 npm i
-npm start
+npm run dev
 http://localhost:8080
