@@ -1,0 +1,5 @@
+Для запуска 
+загрузить репозиторий
+npm i
+npm start
+http://localhost:8080

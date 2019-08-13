@@ -1,0 +1,142 @@
+<header-comp [title]="title"></header-comp>
+
+<div class="edit-panel-wrap">
+	<div class="container-fluid pt-2 pb-2 edit-panel" fixed>
+		<div class="row">
+			<div class="col-12">
+				<button style="margin: 0 2px">
+					<i class="far fa-eye"></i> 
+					<span>Просмотр</span>
+				</button>
+				<button style="margin: 0 2px">
+					<i class="fas fa-bolt"></i>
+					<span>Редактирование</span>
+				</button>
+				<button style="margin: 0 15px">
+					<i class="fas fa-plus"></i>
+					<span>Создание</span>
+				</button>
+				<button style="margin: 0 2px">
+					<i class="fas fa-filter"></i>
+					<span>Фильтр</span>
+				</button>
+				<button style="margin: 0 2px">
+					<i class="fas fa-bars"></i>
+					<span>Настройки</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid pt-2 pb-2 filter">
+	<div class="row">
+		<div class="col-12">
+			&#9660; Фильтр "Все заявки"
+		</div>
+	</div>
+</div>
+<div class="bids pt-2 pb-2">
+	<div class="bids-wrap">
+		<div class="bids__head-wrap d-none d-sm-block">
+			<div class="bids__head js-bids__head">
+				<div class="container-fluid">
+					<div class="d-flex justify-content-between">
+						<div class="p-1 bids__col_f2 text-center border-r">
+							{{bidsTitle?.number_head}}
+						</div>
+						<div class="p-1 bids__col_f4 text-center border-r">
+							{{bidsTitle?.company_head}}
+						</div>
+						<div class="p-1 bids__col_f4 text-center border-r">
+							{{bidsTitle?.status_head}}
+						</div>
+						<div class="p-1 bids__col_f4 text-center border-r">
+							{{bidsTitle?.object_head}}
+						</div>
+						<div class="p-1 bids__col_f3 text-center border-r">
+							{{bidsTitle?.equipment_head}}
+						</div>
+						<div class="p-1 bids__col_f4 text-center border-r">
+							{{bidsTitle?.total_start_head}}
+						</div>
+						<div class="p-1 bids__col_f4 text-center border-r">
+							{{bidsTitle?.total_end_head}}
+						</div>
+						<div class="p-1 bids__col_f4 text-center border-r">
+							{{bidsTitle?.start_head}}
+						</div>
+						<div class="p-1 bids__col_f4 text-center border-r">
+							{{bidsTitle?.end_head}}
+						</div>
+						<div class="p-1 bids__col_f1 text-center border-r">
+							{{bidsTitle?.view_head}}
+						</div>
+						<div class="p-1 bids__col_f3 text-center border-r">
+							{{bidsTitle?.category_head}}
+						</div>
+						<div class="p-1 bids__col_f7 text-center">
+							{{bidsTitle?.upr_head}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bids__body">
+			<div class="container-fluid">
+				<div class="bids__item d-flex  justify-content-between" *ngFor="let bid of bids">
+					<div class="p-1 bids__col bids__col_f2 border-r">
+						<span class="bids__col-head d-sm-none">{{bidsTitle?.number_head}}</span>
+						<a [routerLink]="['bid' , bid.id]">
+							{{bid.number}}
+						</a>
+					</div>
+					<div class="p-1 bids__col bids__col_f4 border-r">
+						<span class="bids__col-head d-sm-none">{{bidsTitle?.company_head}}</span>
+						{{bid.company}}
+					</div>
+					<div class="p-1 bids__col bids__col_f4 border-r">
+						<span class="bids__col-head d-sm-none">{{bidsTitle?.status_head}}</span>
+						{{bid.status}}
+					</div>
+					<div class="p-1 bids__col bids__col_f4 border-r">
+						<span class="bids__col-head d-sm-none">{{bidsTitle?.object_head}}</span>
+						{{bid.object}}
+					</div>
+					<div class="p-1 bids__col bids__col_f3 border-r">
+						<span class="bids__col-head d-sm-none">{{bidsTitle?.equipment_head}}</span>
+						{{bid.equipment}}
+					</div>
+					<div class="p-1 bids__col bids__col_f4 border-r">
+						<span class="bids__col-head d-sm-none">{{bidsTitle?.total_start_head}}</span>
+						{{bid.total_start}}
+					</div>
+					<div class="p-1 bids__col bids__col_f4 border-r">
+						<span class="bids__col-head d-sm-none">{{bidsTitle?.total_end_head}}</span>
+						{{bid.total_end}}
+					</div>
+					<div class="p-1 bids__col bids__col_f4 border-r">
+						<span class="bids__col-head d-sm-none">{{bidsTitle?.start_head}}</span>
+						{{bid.start}}
+					</div>
+					<div class="p-1 bids__col bids__col_f4 border-r">
+						<span class="bids__col-head d-sm-none">{{bidsTitle?.end_head}}</span>
+						{{bid.end}}
+					</div>
+					<div class="p-1 bids__col bids__col_f1 border-r">
+						<span class="bids__col-head d-sm-none">{{bidsTitle?.view_head}}</span>
+						{{bid.view}}
+					</div>
+					<div class="p-1 bids__col bids__col_f3 border-r">
+						<span class="bids__col-head d-sm-none">{{bidsTitle?.category_head}}</span>
+						{{bid.category}}
+					</div>
+					<div class="p-1 bids__col bids__col_f7">
+						<span class="bids__col-head d-sm-none">{{bidsTitle?.upr_head}}</span>
+						{{bid.upr}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<pagination [maxResults]="maxResults" [perPage]="perPage" [page]="page" (onInput)="onInput($event)" (onChanged)="onChanged($event)"></pagination>

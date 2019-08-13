@@ -1,0 +1,172 @@
+<header-comp [title]="title"></header-comp>
+
+<div class="edit-panel-wrap">
+	<div class="container-flid edit-panel" fixed>
+		<div class="row ">
+			<div class="col-7 col-lg-8 col-xl-9 pr-0 edit-panel_blue">
+				<div class="edit-panel__row">
+					<div class="edit-panel__btn edit-panel_border" onclick="window.history.back()">
+						<i class="fas fa-arrow-left"></i>
+					</div>
+					<div class="edit-panel__btn edit-panel_border">
+						<i class="fas fa-bolt"></i>
+						<span class="ml-2">Редактировать</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-5 col-lg-4 col-xl-3 pl-0">
+				<div class="edit-panel__row">
+					<div class="edit-panel__btn edit-panel__btn_active edit-panel_border edit-panel__common edit-panel_dark-blue">
+						<i class="fas fa-bars d-md-none"></i>
+						<span>Общие</span>
+					</div>
+					<div class="edit-panel__btn edit-panel_border edit-panel__notes edit-panel_green">
+						<i class="far fa-file d-md-none"></i>
+						<span>Примечания</span>
+					</div>
+					<div class="edit-panel__btn edit-panel_border edit-panel__signs edit-panel_brown">
+						<i class="fas fa-pencil-alt d-md-none"></i>
+						<span>Подписи</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="bid pt-3 pb-2">
+	<div class="bid-wrap">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-3 col-xl-3 bid__descr-block">
+					<div class="bid__descr">
+						<span> Состояние</span>
+						{{bidDetail?.status}}
+					</div>
+					<div class="bid__descr" >
+						<span ngbTooltip="{{bidDetail?.company}}" triggers="click:blur">Предприятие</span>
+						<div class="bid__descr_ellpsis"  ngbTooltip="{{bidDetail?.company}}" triggers="click:blur">
+					    	{{bidDetail?.company}}
+					    </div>
+					</div>
+					<div class="bid__descr">
+						<span>Объект</span>
+						{{bidDetail?.object}}
+					</div>
+					<div class="bid__descr">
+						<span ngbTooltip="{{bidDetail?.equipment_a}}" triggers="click:blur">Оборудование</span>
+						<div class="bid__descr_ellpsis" ngbTooltip="{{bidDetail?.equipment_a}}" triggers="click:blur">
+							{{bidDetail?.equipment_a}}
+						</div>
+					</div>
+					<div class="bid__descr">
+						<span ngbTooltip="{{bidDetail?.equipment}}" triggers="click:blur">Оборудование, выв. в ремонт</span>
+						<div class="bid__descr_ellpsis" ngbTooltip="{{bidDetail?.equipment}}" triggers="click:blur">
+							{{bidDetail?.equipment}}
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 col-xl-3 bid__descr-block">
+					<div class="bid__descr">
+						<span>Просимый срок</span>
+						{{bidDetail?.total_start}} - {{bidDetail?.total_start}}
+					</div>
+					<div class="bid__descr">
+						<span>Разрешенный срок</span>
+						{{bidDetail?.total_end}} - {{bidDetail?.total_end}}
+					</div>
+					<div class="bid__descr">
+						<span>Фактический срок</span>
+						{{bidDetail?.actual_limitation}}
+					</div>
+					<div class="bid__descr">
+						<span>Плановыйй срок</span>
+						{{bidDetail?.limitation.start}} - {{bidDetail?.limitation.end}}
+					</div>
+					<div class="bid__descr">
+						<span>Время создания</span>
+						{{bidDetail?.created}}
+					</div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 col-xl-3 bid__descr-block">
+					<div class="bid__descr">
+						<span>Программа переключений</span>
+						{{bidDetail?.switching_prog}}
+					</div>
+					<div class="bid__descr">
+						<span>Комплекс</span>
+						{{bidDetail?.complex}}
+					</div>
+					<div class="bid__descr">
+						<span>Состояние оборуд. по заявке (УПР)</span>
+						{{bidDetail?.upr}}
+					</div>
+					<div class="bid__descr_row">
+						<div class="bid__descr mr-5">
+							<span>Р</span>
+							{{bidDetail?.p}}
+						</div>
+						<div class="bid__descr ml-5">
+							<span>dP</span>
+							{{bidDetail?.dp}}
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 col-xl-3 bid__descr-block">
+					<div class="bid__descr">
+						<span>Категория</span>
+						{{bidDetail?.category}}
+					</div>
+					<div class="bid__descr">
+						<span>Продление</span>
+						{{bidDetail?.prolongation}}
+					</div>
+					<div class="bid__descr">
+						<span>Ремонт</span>
+						{{bidDetail?.repairs}}
+					</div>
+					<div class="bid__descr">
+						<span>А/Г</span>
+						{{bidDetail?.ag}}
+					</div>
+				</div>
+			</div>
+			<div class="row bid__note">
+				<div class="col-lg-6">
+					<div class="bid__descr bid__descr_green">
+						<span>Содержание работ</span>
+						<div>{{bidDetail?.content_work.object}}</div>
+						<div>{{bidDetail?.content_work.title}}</div>
+						<div>{{bidDetail?.content_work.description}}</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="bid__descr bid__descr_green">
+						<span>Режимные указания</span>
+						<div>{{bidDetail?.r_instructions.object}}</div>
+						<div>{{bidDetail?.r_instructions.title}}</div>
+					</div>
+					<div class="bid__descr bid__descr_green">
+						<span>Оперативные указания</span>
+						<div>{{bidDetail?.o_instructions.object}}</div>
+						<div>{{bidDetail?.o_instructions.title}}</div>
+					</div>
+				</div>
+			</div>
+			<div class="row bid__summury">
+				<div class="col-12">
+					<div class="bid__descr bid__descr_black">
+						<span>Подающее предприятие</span>
+						{{bidDetail?.supply.title}}
+						{{bidDetail?.supply.date.start}} {{bidDetail?.supply.date.end}}
+					</div>
+					<div class="bid__descr bid__descr_black">
+						<span>Предыдущее предприятие</span>
+						{{bidDetail?.previous.title}}
+						{{bidDetail?.previous.date.start}} {{bidDetail?.previous.date.end}}
+						{{bidDetail?.previous.signs}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

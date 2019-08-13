@@ -1,0 +1,137 @@
+@import ../../../_variables
+
+.edit-panel
+	color: #fff
+	& a
+		color: #fff
+		text-decoration: none
+	&_blue
+		background-color: $blue
+	&_dark-blue
+		background-color: $dark-blue
+	&_green
+		background-color: $green
+	&_brown
+		background-color: $brown
+	&_border
+		border-left: 1px solid #fff
+		border-right: 1px solid #fff
+	&__row
+		display: flex
+	&__btn
+		padding: 10px 20px
+		text-align: center
+		cursor: pointer
+	&__common
+		flex: 1
+		position: relative
+		&.edit-panel__btn_active
+			&:after
+				content: ''
+				width: 0
+				height: 0
+				border-style: solid
+				border-width: 10px 10px 0 10px
+				border-color: $dark-blue transparent transparent transparent
+				position: absolute
+				bottom: -10px
+				left: 50%
+				transform: translateX(-50%)
+	&__notes
+		flex: 2
+		&.edit-panel__btn_active
+			&:after
+				content: ''
+				width: 0
+				height: 0
+				border-style: solid
+				border-width: 10px 10px 0 10px
+				border-color: $green transparent transparent transparent
+				position: absolute
+				bottom: -10px
+				left: 50%
+				transform: translateX(-50%)
+	&__signs
+		flex: 2
+		&.edit-panel__btn_active
+			&:after
+				content: ''
+				width: 0
+				height: 0
+				border-style: solid
+				border-width: 10px 10px 0 10px
+				border-color: $brown transparent transparent transparent
+				position: absolute
+				bottom: -10px
+				left: 50%
+				transform: translateX(-50%)
+.bid
+	&__note
+		background-color: #bbe2bd
+	&__summury
+		background-color: #fdedbd
+	&__descr-block
+		&:nth-child(even)
+			background-color: #ececec
+	&__descr
+		display: flex
+		flex-direction: column
+		margin-bottom: 15px
+		font-size: 14px
+		white-space: nowrap
+		&_row
+			display: flex
+		& span
+			font-size: 10px
+			color: #888888
+		&_green
+			white-space: initial
+			& span
+				color: green
+		&_black
+			white-space: initial
+			& span
+				color: #000
+		&_ellpsis
+			white-space: nowrap
+			overflow: hidden
+			text-overflow: ellipsis
+
+@media (max-width: 991px)
+	.bid
+		&__descr-block
+			&:nth-child(even)
+				background-color: transparent
+			&:nth-child(2)
+				background-color: #ececec
+			&:nth-child(3)
+				background-color: #ececec
+
+@media (max-width: 767px)
+	.edit-panel
+		&__btn
+			& span
+				display: none
+	.bid
+		&__descr-block
+			&:nth-child(even)
+				background-color: transparent
+			&:nth-child(2)
+				background-color: transparent
+			&:nth-child(3)
+				background-color: transparent
+			&:nth-child(odd)
+				background-color: #ececec
+		&__descr
+			flex-direction: row
+			align-items: center
+			margin-bottom: 5px
+			& span
+				margin-right: 10px
+			&_green
+				flex-direction: column
+				align-items: flex-start
+			&_black
+				flex-direction: column
+				align-items: flex-start
+

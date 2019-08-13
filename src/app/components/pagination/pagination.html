@@ -1,0 +1,24 @@
+<div class="control-panel-wrap">
+	<div class="container-fluid pt-2 pb-2 control-panel">
+		<div class="row">
+			<div class="col-3 pr-0  col-sm-4 control-panel__current">
+				<span>Страница</span>
+				<input  class="control-panel__current-page" type="text" value="{{page}}" (change)="changePage($event.target.value)">
+				из {{maxPages()}}
+			</div>
+			<div class="col-6 pr-0 pl-0 col-sm-4 text-center">
+				<button (click)="changePage('1')" ><i class="fas fa-angle-double-left"></i></button>
+				<button (click)="changePage('prev')" ><i class="fas fa-angle-left"></i></button>
+				<button (click)="changePage('next')" ><i class="fas fa-angle-right"></i></button>
+				<button (click)="changePage(maxPages())" ><i class="fas fa-angle-double-right"></i></button>
+			</div>
+			<div class="col-3  pl-0 col-sm-4 text-right control-panel__count">
+				<span>Записей на странице </span>
+				<select (change)="change($event.target.value)">	
+					<option *ngFor="let page of pages" [value]="page">{{page}}</option>
+				</select> 
+				из {{maxResults}}
+			</div>
+		</div>
+	</div>
+</div>

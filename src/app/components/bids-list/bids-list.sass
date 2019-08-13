@@ -1,0 +1,164 @@
+.edit-panel-wrap
+	height: 37px
+
+input
+	border: 1px solid #000
+
+button
+	border: 1px solid #000
+	border-radius: 3px
+	&:focus
+		outline: 1px solid #ccc
+	& span
+		margin-left: 5px
+
+.edit-panel
+	background-color: #e4e4e4
+	&.fixed
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+		z-index: 1
+
+.bids__head
+	&.fixed
+		background-color: #fff
+		z-index: 1
+		position: absolute
+		left: 0px
+		width: 100%
+
+.control-panel
+	&-wrap
+		height: 50px
+	&.fixed
+		position: fixed
+		bottom: 0
+		left: 0
+		width: 100%
+		background: #fff
+		z-index: 1
+	&__current-page
+		width: 50px
+
+
+.border-r
+    border-right: 1px solid #000
+.bids
+	overflow-y: scroll
+	&-wrap
+	&__head-wrap
+		height: 26px
+		position: relative
+	&__col
+		overflow: hidden
+		white-space: nowrap
+		text-overflow: ellipsis
+		&_f1
+			flex: 1
+			min-width: 31px
+		&_f2
+			flex: 2
+			min-width: 62px
+		&_f3
+			flex: 3
+			min-width: 93px
+		&_f4
+			flex: 4
+			min-width: 124px
+		&_f7
+			flex: 7
+			min-width: 217px
+	&__item
+		cursor: default
+		&:nth-of-type(odd)
+			background-color: #d3e8cc
+			&:hover
+				background-color: #89aada
+		&:hover
+			background-color: #89aada
+
+
+@media (max-width: 1367px)
+	.bids
+		&-wrap
+			display: inline-block
+
+@media (max-width: 575px)
+	a
+		text-decoration: underline
+	.border-r
+    	border-right: 0
+	.bids
+		&__item
+			flex-wrap: wrap
+			border: 1px solid #000
+			&:nth-of-type(odd)
+				background-color: transparent
+		&__col-head
+			color: #0c67ca
+		&__col
+			display: flex
+			flex-direction: column
+			&:nth-child(1)
+				order: 0
+				min-width: 20%
+			&:nth-child(2)
+				order: 7
+				min-width: 50%
+			&:nth-child(3)
+				order: 2
+				min-width: 40%
+			&:nth-child(4)
+				order: 6
+				min-width: 50%
+			&:nth-child(5)
+				order: 1
+				min-width: 40%
+			&:nth-child(6)
+				order: 8
+				min-width: 50%
+			&:nth-child(7)
+				order: 9
+				min-width: 50%
+			&:nth-child(8)
+				order: 10
+				min-width: 50%
+			&:nth-child(9)
+				order: 11
+				min-width: 50%
+			&:nth-child(10)
+				order: 3
+				min-width: 20%
+			&:nth-child(11)
+				order: 4
+				min-width: 30%
+			&:nth-child(12)
+				order: 5
+				min-width: 50%
+	button
+		width: 35px
+		& span
+			display: none
+	.control-panel
+		&__count
+			display: flex
+			align-items: center
+			justify-content: flex-end
+			& span
+				display: none
+			& select
+				margin-right: 5px
+		&__current
+			display: flex
+			align-items: center
+			& input
+				width: 30px
+				margin-right: 5px
+			& span
+				white-space: nowrap
+				overflow: hidden
+				margin-right: 5px
+				width: 22px
+				display: inline-block
